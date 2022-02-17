@@ -1,0 +1,199 @@
+/* register & login form start  */
+header {
+  background-color: #1f1f1f;
+  padding: 20px 0;
+}
+header .navbar-light .navbar-brand,
+header .navbar-light .navbar-brand:hover,
+header .navbar-light .navbar-brand.active {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  letter-spacing: 1px;
+  font-size: 21px;
+}
+header .navbar-light .navbar-nav .nav-link,
+header .navbar-light .navbar-nav .nav-link:hover,
+header .navbar-light .navbar-nav .nav-link:focus,
+header .navbar-light .navbar-nav .nav-link.active {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+.bank-bg {
+  background-image: url("../images/bg-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 90vh;
+}
+.bank-bg h1 {
+  color: rgb(0, 105, 146);
+  font-size: 30px;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.74);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.bank-bg h1 span {
+  color: #7201b8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.register-form {
+  background-color: rgba(255, 255, 255, 0.822);
+  box-shadow: 0 0 5px 4px #fff;
+  border-radius: 10px;
+  height: 100%;
+}
+.register-form h3 {
+  text-transform: uppercase;
+  color: #235895;
+}
+.register-form input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 90%;
+  border-bottom: 1px solid #235895;
+  color: #034969;
+  font-size: 18px;
+}
+.register-form button {
+  color: #fff;
+  background-color: #058fc5;
+  border-radius: 5px;
+  padding: 10px 25px;
+  transition: 0.4s all ease-in-out;
+}
+.register-form button:hover {
+  color: #235895;
+  background-color: #06cbe6;
+}
+/* register & login form end  */
+
+/* account form start  */
+.account {
+  background-image: url("../images/bg-2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 90vh;
+}
+.account-title {
+  color: rgb(0, 105, 146);
+  font-size: 30px;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 50px;
+  padding: 20px 30px;
+}
+.account-title span {
+  color: #5c0096;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.accounts-details {
+  background-color: #93ddff93;
+  border-radius: 8px;
+  box-shadow: 0px 1px 5px 0px #b6b6b7ad;
+  transition: 0.3s all ease-in-out;
+}
+.accounts-details:hover {
+  box-shadow: 0px 1px 5px 3px #b6b6b7ad;
+  transform: scale(1.05);
+}
+.accounts-details h3 {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #235895;
+}
+.accounts-details h4 {
+  font-size: 35px;
+  color: #034969;
+}
+.deposit-withdraw {
+  background-color: #1d8eb188;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px 1px #a8a8ddad;
+}
+.deposit-withdraw h3 {
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #1b0546;
+  font-weight: 600;
+}
+.deposit-withdraw input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #1b0546;
+  width: 90%;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+}
+.deposit-withdraw input::placeholder {
+  color: rgba(233, 227, 227, 0.993);
+  font-size: 18px;
+}
+.deposit-withdraw button {
+  color: #fff;
+  background-color: #058fc5;
+  border-radius: 5px;
+  padding: 10px 25px;
+  transition: 0.4s all ease-in-out;
+}
+.deposit-withdraw button:hover {
+  color: #fff;
+  background-color: #0b4d99;
+}
+.website {
+  padding-bottom: 120px;
+}
+.website h1 {
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #0b4d99;
+}
+.website-info {
+  background-color: #02557cf5;
+  padding: 25px;
+}
+.website-info h3 {
+  text-transform: uppercase;
+  color: #37f7fd;
+}
+.website-info h5 {
+  color: rgb(168, 228, 236);
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.website-info p {
+  color: rgb(233, 230, 230);
+  margin-bottom: 0;
+}
+.website-info h4 {
+  font-size: 22px;
+  font-weight: 400;
+  padding: 12px 0 18px 0;
+}
+.website-info button {
+  color: #fff;
+  border: 0;
+  background-color: #058fc5;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-weight: 600;
+  transition: 0.4s all ease-in-out;
+}
+.website-info button:hover {
+  color: #fff;
+  background-color: rgb(3, 43, 30);
+}
