@@ -66,13 +66,34 @@ document.getElementById('buy-btn').addEventListener('click', function(){
     // console.log(buyButton.innerText);
     if(myBalance.innerText >= websitePriceFloat && buyButton.innerText == 'BUY NOW')
     {
-        buyButton.innerText = 'Owned';
+        buyButton.innerText = 'OWNED';
         myBalance.innerText = parseFloat(myBalance.innerText) - websitePriceFloat;
         alert('Successfully owned this website');
     }
     else if(buyButton.innerText == 'OWNED')
     {
         window.location.href = "https://ahsan-emon.github.io/Plant-Shop-Website/";
+    }
+    else{
+        alert('Insufficient balance!');
+    }
+});
+// wesite buy1 
+document.getElementById('buy-btn1').addEventListener('click', function(){
+    const buyButton = document.getElementById('buy-btn1');
+    const websitePrice = document.getElementById('website-price1');
+    const websitePriceFloat = parseFloat(websitePrice.innerText);
+    const myBalance = document.getElementById('bal-amount');
+    // console.log(buyButton.innerText);
+    if(myBalance.innerText >= websitePriceFloat && buyButton.innerText == 'BUY NOW')
+    {
+        buyButton.innerText = 'OWNED';
+        myBalance.innerText = parseFloat(myBalance.innerText) - websitePriceFloat;
+        alert('Successfully owned this website');
+    }
+    else if(buyButton.innerText == 'OWNED')
+    {
+        window.location.href = "https://ahsan-emon.github.io/Cycle-website/";
     }
     else{
         alert('Insufficient balance!');
