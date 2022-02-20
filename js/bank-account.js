@@ -1,78 +1,94 @@
-// deposit 
-document.getElementById('depo-btn').addEventListener('click', function(){
+// output the input value 
+function getInputValue(inputId){
     // get deposit input value 
-    const depoField = document.getElementById('depo-inp');
-    const depoAmount = parseFloat(depoField.value);
-    // get depo current amount 
-    const depoCurrent = document.getElementById('depo-amount');
-    const depoCurrentFloat = parseFloat(depoCurrent.innerText);
-    // get balance amount
-    const balAmount = document.getElementById('bal-amount');
-    const balAmountFloat = parseFloat(balAmount.innerText);
-    // upadte total balance and current deposit balance 
-    // console.log(typeof(parseFloat(depoAmount)));
-    if(!isNaN(depoAmount)){
+    const inputField = document.getElementById(inputId);
+    const inputAmount = parseFloat(inputField.value);
+    // clear the deposit input field 
+    inputField.value = '';
+    return inputAmount;
+}
+// current balance 
+function getCurrentBalance(currentId){
+    const currentField = document.getElementById(currentId);
+    const currentAmount = parseFloat(currentField.innerText);
+    return currentAmount;
+}
+//output the update the value 
+function updateTotalField(inputAmount,currentId, isAdd){
+    // debugger;
+    const currentField = document.getElementById(currentId);
+    const currentAmount = getCurrentBalance(currentId);
+    const balCurrent = document.getElementById('bal-amount');
+    const balCurrentAmount = getCurrentBalance('bal-amount');
+
+    if(isAdd == true)
+    {
         alert('Deposit Successfully');
-        depoCurrent.innerText = depoCurrentFloat + depoAmount;
-        balAmount.innerText = balAmountFloat + depoAmount;
-       
+        currentField.innerText = currentAmount + inputAmount;
+        balCurrent.innerText = balCurrentAmount + inputAmount;
     }
     else
     {
-        alert('Wrong input, try again!');
-    }
-    // clear the deposit input field 
-    depoField.value = '';
-});
-// withdraw 
-document.getElementById('withdraw-btn').addEventListener('click', function(){
-    // get withdraw input value 
-    const withdrawField = document.getElementById('withdraw-inp');
-    const withdrawAmount = parseFloat(withdrawField.value);
-    // get withdraw current amount 
-    const withdrawCurrent = document.getElementById('withdraw-amount');
-    const withdrawCurrentFloat = parseFloat(withdrawCurrent.innerText);
-    // get balance amount
-    const balAmount = document.getElementById('bal-amount');
-    const balAmountFloat = parseFloat(balAmount.innerText);
-    // upadte total balance and current deposit balance 
-    // console.log(typeof(parseFloat(depoAmount)));
-    if(!isNaN(withdrawAmount)){
-        if(withdrawAmount <= balAmountFloat )
+        if(inputAmount <= balCurrentAmount )
         {
             alert('Withdraw Successfully');
-            withdrawCurrent.innerText = withdrawCurrentFloat + withdrawAmount;
-            balAmount.innerText = balAmountFloat - withdrawAmount;
+            currentField.innerText = currentAmount + inputAmount;
+            document.getElementById('bal-amount').innerText = balCurrentAmount - inputAmount;
         }
         else{
             alert('Insufficient balance!');
         }
+    
+    }
+}
+document.getElementById('depo-btn').addEventListener('click', function(){
+    // get deposit input value 
+    const depoAmount = getInputValue('depo-inp');
+    if(depoAmount > 0)
+    {
+        // update after deposit 
+        updateTotalField(depoAmount, 'depo-amount', true);
     }
     else
     {
-        alert('Wrong input, try again!');
+        alert('Wrong input taken!!');
     }
-    // clear the deposit input field 
-    withdrawField.value = '';
+});
+// withdraw 
+document.getElementById('withdraw-btn').addEventListener('click', function(){
+    //get withdraw input value
+    const withdrawAmount = getInputValue('withdraw-inp');
+    if(withdrawAmount > 0)
+    {
+        // update after withdraw 
+        updateTotalField(withdrawAmount, 'withdraw-amount', false);
+    }
+    else
+    {
+        alert('Wrong input taken!!');
+    }
 });
 
 
 // wesite buy 
 document.getElementById('buy-btn').addEventListener('click', function(){
     const buyButton = document.getElementById('buy-btn');
-    const websitePrice = document.getElementById('website-price');
-    const websitePriceFloat = parseFloat(websitePrice.innerText);
-    const myBalance = document.getElementById('bal-amount');
+    const websitePriceFloat = getCurrentBalance('website-price');
+    const myBalanceText = document.getElementById('bal-amount');
+    const myBalance = getCurrentBalance('bal-amount');
     // console.log(buyButton.innerText);
-    if(myBalance.innerText >= websitePriceFloat && buyButton.innerText == 'BUY NOW')
+    if(myBalance >= websitePriceFloat && buyButton.innerText == 'BUY NOW')
     {
         buyButton.innerText = 'OWNED';
-        myBalance.innerText = parseFloat(myBalance.innerText) - websitePriceFloat;
+        myBalanceText.innerText = myBalance - websitePriceFloat;
         alert('Successfully owned this website');
     }
     else if(buyButton.innerText == 'OWNED')
     {
-        window.location.href = "https://ahsan-emon.github.io/Plant-Shop-Website/";
+        /* window.location.href = "https://ahsan-emon.github.io/Plant-Shop-Website/";
+        target = "_blank" */
+        // this way target attribute worked 
+        window.open("https://ahsan-emon.github.io/Plant-Shop-Website/", '_blank');
     }
     else{
         alert('Insufficient balance!');
@@ -81,19 +97,22 @@ document.getElementById('buy-btn').addEventListener('click', function(){
 // wesite buy1 
 document.getElementById('buy-btn1').addEventListener('click', function(){
     const buyButton = document.getElementById('buy-btn1');
-    const websitePrice = document.getElementById('website-price1');
-    const websitePriceFloat = parseFloat(websitePrice.innerText);
-    const myBalance = document.getElementById('bal-amount');
+    const websitePriceFloat = getCurrentBalance('website-price1');
+    const myBalanceText = document.getElementById('bal-amount');
+    const myBalance = getCurrentBalance('bal-amount');
     // console.log(buyButton.innerText);
-    if(myBalance.innerText >= websitePriceFloat && buyButton.innerText == 'BUY NOW')
+    if(myBalance >= websitePriceFloat && buyButton.innerText == 'BUY NOW')
     {
         buyButton.innerText = 'OWNED';
-        myBalance.innerText = parseFloat(myBalance.innerText) - websitePriceFloat;
+        myBalanceText.innerText = myBalance - websitePriceFloat;
         alert('Successfully owned this website');
     }
     else if(buyButton.innerText == 'OWNED')
     {
-        window.location.href = "https://ahsan-emon.github.io/Cycle-website/";
+        /* window.location.href = "https://ahsan-emon.github.io/Cycle-website/";
+        target = "_blank" */
+        // this way target attribute worked 
+        window.open("https://ahsan-emon.github.io/Cycle-website/", '_blank');
     }
     else{
         alert('Insufficient balance!');
